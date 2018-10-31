@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Ocelot.DependencyInjection
 {
+    /// <summary>
+    /// Ocelot服务接口
+    /// </summary>
     public interface IOcelotBuilder
     {
         IServiceCollection Services { get; }

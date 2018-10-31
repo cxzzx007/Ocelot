@@ -38,18 +38,27 @@ namespace Ocelot.DependencyInjection
     using Ocelot.Security.IPSecurity;
     using Ocelot.Security;
 
+    /// <summary>
+    /// Ocelot服务创建
+    /// </summary>
     public class OcelotBuilder : IOcelotBuilder
     {
         public IServiceCollection Services { get; }
         public IConfiguration Configuration { get; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OcelotBuilder"/> class.
+        /// OcelotBuilder构造函数.
+        /// </summary>
+        /// <param name="services">接收IserviceCollection</param>
+        /// <param name="configurationRoot">接收配置文件</param>
         public OcelotBuilder(IServiceCollection services, IConfiguration configurationRoot)
         {
             Configuration = configurationRoot;
             Services = services;
-            Services.Configure<FileConfiguration>(configurationRoot);
+            Services.Configure<FileConfiguration>(configurationRoot);//强类型绑定配置到FileConfiguration类上
 
-            Services.TryAddSingleton<IOcelotCache<FileConfiguration>, InMemoryCache<FileConfiguration>>();
+            Services.TryAddSingleton<IOcelotCache<FileConfiguration>, InMemoryCache<FileConfiguration>>();//
             Services.TryAddSingleton<IOcelotCache<CachedResponse>, InMemoryCache<CachedResponse>>();
             Services.TryAddSingleton<IHttpResponseHeaderReplacer, HttpResponseHeaderReplacer>();
             Services.TryAddSingleton<IHttpContextRequestHeaderReplacer, HttpContextRequestHeaderReplacer>();
