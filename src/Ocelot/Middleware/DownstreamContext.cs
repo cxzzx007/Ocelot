@@ -7,6 +7,9 @@ using Ocelot.Request.Middleware;
 
 namespace Ocelot.Middleware
 {
+    /// <summary>
+    /// 下游 上下文
+    /// </summary>
     public class DownstreamContext
     {
         public DownstreamContext(HttpContext httpContext)
@@ -17,6 +20,7 @@ namespace Ocelot.Middleware
 
         public List<PlaceholderNameAndValue> TemplatePlaceholderNameAndValues { get; set; }
 
+        //http 请求上下文
         public HttpContext HttpContext { get; }
 
         public DownstreamReRoute DownstreamReRoute { get; set; }

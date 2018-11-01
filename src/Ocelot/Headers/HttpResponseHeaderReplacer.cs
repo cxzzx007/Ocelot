@@ -8,8 +8,12 @@ namespace Ocelot.Headers
     using Ocelot.Middleware;
     using Ocelot.Responses;
 
+    /// <summary>
+    /// http响应头替换类 实现响应头替换接口
+    /// </summary>
     public class HttpResponseHeaderReplacer : IHttpResponseHeaderReplacer
     {
+        //占位符接口 
         private readonly IPlaceholders _placeholders;
 
         public HttpResponseHeaderReplacer(IPlaceholders placeholders)

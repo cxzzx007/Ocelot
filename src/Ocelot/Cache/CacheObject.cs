@@ -14,7 +14,10 @@
             Expires = expires;
         }
 
+        //缓存对象
         public T Value { get; }
+
+        //过期时间
         public DateTime Expires { get; }
     }
 }

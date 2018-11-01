@@ -1,5 +1,8 @@
 ﻿namespace Ocelot.Errors
 {
+    /// <summary>
+    /// 错误状态码 枚举
+    /// </summary>
     public enum OcelotErrorCode
     {
         UnauthenticatedError, 

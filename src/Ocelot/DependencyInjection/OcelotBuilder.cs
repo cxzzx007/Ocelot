@@ -58,8 +58,8 @@ namespace Ocelot.DependencyInjection
             Services = services;
             Services.Configure<FileConfiguration>(configurationRoot);//强类型绑定配置到FileConfiguration类上
 
-            Services.TryAddSingleton<IOcelotCache<FileConfiguration>, InMemoryCache<FileConfiguration>>();//
-            Services.TryAddSingleton<IOcelotCache<CachedResponse>, InMemoryCache<CachedResponse>>();
+            Services.TryAddSingleton<IOcelotCache<FileConfiguration>, InMemoryCache<FileConfiguration>>();//将FileConfiguration添加到InMemoryCache中 作为服务
+            Services.TryAddSingleton<IOcelotCache<CachedResponse>, InMemoryCache<CachedResponse>>();//奖CachedResponse添加到InMemoryCache中作为服务
             Services.TryAddSingleton<IHttpResponseHeaderReplacer, HttpResponseHeaderReplacer>();
             Services.TryAddSingleton<IHttpContextRequestHeaderReplacer, HttpContextRequestHeaderReplacer>();
             Services.TryAddSingleton<IHeaderFindAndReplaceCreator, HeaderFindAndReplaceCreator>();
