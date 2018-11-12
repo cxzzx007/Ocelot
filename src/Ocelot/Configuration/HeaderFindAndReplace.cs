@@ -1,5 +1,8 @@
 namespace Ocelot.Configuration
 {
+    /// <summary>
+    /// header Ìæ»»Àà
+    /// </summary>
     public class HeaderFindAndReplace
     {
         public HeaderFindAndReplace(string key, string find, string replace, int index)

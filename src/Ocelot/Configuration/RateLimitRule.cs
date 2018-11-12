@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace Ocelot.Configuration
+﻿namespace Ocelot.Configuration
 {
+    /// <summary>
+    /// 限流规则 类
+    /// </summary>
     public class RateLimitRule
     {
         public RateLimitRule(string period, double periodTimespan, long limit)
@@ -11,16 +12,12 @@ namespace Ocelot.Configuration
             Limit = limit;
         }
 
-        /// <summary>
-        /// Rate limit period as in 1s, 1m, 1h,1d
-        /// </summary>
+        // Rate limit period as in 1s, 1m, 1h,1d
         public string Period { get; private set; }
 
         public double PeriodTimespan { get; private set; }
-        
-        /// <summary>
-        /// Maximum number of requests that a client can make in a defined period
-        /// </summary>
+
+        // Maximum number of requests that a client can make in a defined period
         public long Limit { get; private set; }
     }
 }

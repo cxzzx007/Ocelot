@@ -1,5 +1,8 @@
 namespace Ocelot.Configuration.Creator
 {
+    /// <summary>
+    /// ÃÌº”Õ∑ ¿‡
+    /// </summary>
     public class AddHeader
     {
         public AddHeader(string key, string value)

@@ -4,6 +4,9 @@ namespace Ocelot.Configuration
     using Creator;
     using Values;
 
+    /// <summary>
+    /// 下游重路由类
+    /// </summary>
     public class DownstreamReRoute
     {
         public DownstreamReRoute(
@@ -71,20 +74,50 @@ namespace Ocelot.Configuration
         }
 
         public string Key { get; }
+
+        //上游路径模板
         public UpstreamPathTemplate UpstreamPathTemplate { get; }
+
+        //上游头部替换
         public List<HeaderFindAndReplace> UpstreamHeadersFindAndReplace { get; }
+
+        //下游头部替换
         public List<HeaderFindAndReplace> DownstreamHeadersFindAndReplace { get; }
+
+        //下游主机和端口
         public List<DownstreamHostAndPort> DownstreamAddresses { get; }
+
+        //服务名称
         public string ServiceName { get; }
+
+        //http处理选项
         public HttpHandlerOptions HttpHandlerOptions { get; }
+
+        //使用服务发现
         public bool UseServiceDiscovery { get; }
+
+        //使用端口限流
         public bool EnableEndpointEndpointRateLimiting { get; }
+
+        //服务质量选项
         public QoSOptions QosOptions { get; }
+
+        //下游策略
         public string DownstreamScheme { get; }
+
+        //请求id key
         public string RequestIdKey { get; }
+
+        //是否缓存
         public bool IsCached { get; }
+
+        //缓存选项
         public CacheOptions CacheOptions { get; }
+
+        //负载均衡选项
         public LoadBalancerOptions LoadBalancerOptions { get; }
+
+        //限流选项
         public RateLimitOptions RateLimitOptions { get; }
         public Dictionary<string, string> RouteClaimsRequirement { get; }
         public List<ClaimToThing> ClaimsToQueries { get; }
@@ -96,9 +129,15 @@ namespace Ocelot.Configuration
         public DownstreamPathTemplate DownstreamPathTemplate { get; }
         public string LoadBalancerKey { get; }
         public List<string> DelegatingHandlers { get; }
+
+        //下游添加头
         public List<AddHeader> AddHeadersToDownstream { get; }
+
+        //上游添加头
         public List<AddHeader> AddHeadersToUpstream { get; }
         public bool DangerousAcceptAnyServerCertificateValidator { get; }
+
+        //安全选项
         public SecurityOptions SecurityOptions { get; }
     }
 }
